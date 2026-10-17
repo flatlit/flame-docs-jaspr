@@ -11,7 +11,6 @@ import 'dart:convert';
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/server.dart';
 
-import 'package:jaspr_content/components/callout.dart';
 import 'package:jaspr_content/components/code_block.dart';
 import 'package:jaspr_content/components/github_button.dart';
 import 'package:jaspr_content/components/header.dart';
@@ -21,6 +20,7 @@ import 'package:jaspr_content/jaspr_content.dart';
 import 'package:jaspr_content/theme.dart';
 import 'package:jaspr_poc/components/admonition.dart';
 import 'package:jaspr_poc/components/deprecation.dart';
+import 'package:jaspr_poc/components/mermaid.dart';
 import 'package:jaspr_router/jaspr_router.dart';
 
 // This file is generated automatically by Jaspr, do not remove or edit.
@@ -72,6 +72,7 @@ void main() {
         TableOfContentsExtension(),
       ],
       components: [
+        Mermaid(),
         Deprecation(),
         Admonition(),
         // Adds syntax highlighting to code blocks.
@@ -81,13 +82,15 @@ void main() {
             // These are directives used by Sphinx
             '{include}': emptyGrammar, // TODO there are rarely used, they should be inlined
             '{toctree}': emptyGrammar, // TODO we need a new way to create the sidebar
-            // These are now covered by Deprecation and Admonition components
+            // Handled by Admonition component
             // '{note}': emptyGrammar,
             // '{warning}': emptyGrammar,
             // '{error}': emptyGrammar,
             // '{seealso}': emptyGrammar,
+            // Handled by Deprecation component
             // '{deprecated}': emptyGrammar,
-            '{mermaid}': emptyGrammar,
+            // Handled by Mermaid component
+            // '{mermaid}': emptyGrammar,
             '{flutter-app}': emptyGrammar,
             '{dartdoc}': emptyGrammar, // TODO suggest these just link to the API doc
             // Languages (to be rationalised and additional )
@@ -208,6 +211,7 @@ void main() {
                 links: [
                   SidebarLink(text: "Index", href: '/flame/rendering/rendering'),
                   SidebarLink(text: "Images", href: '/flame/rendering/images'),
+                  SidebarLink(text: "Text Rendering", href: '/flame/rendering/text_rendering'),
                 ],
               ),
               SidebarGroup(
