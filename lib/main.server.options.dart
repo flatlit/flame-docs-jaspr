@@ -15,6 +15,8 @@ import 'package:jaspr_content/components/github_button.dart' as _github_button;
 import 'package:jaspr_content/components/image.dart' as _image;
 import 'package:jaspr_content/components/sidebar_toggle_button.dart'
     as _sidebar_toggle_button;
+import 'package:jaspr_poc/components/admonition.dart' as _admonition;
+import 'package:jaspr_poc/components/deprecation.dart' as _deprecation;
 
 /// Default [ServerOptions] for use with your Jaspr project.
 ///
@@ -58,6 +60,8 @@ ServerOptions get defaultServerOptions => ServerOptions(
     ..._github_button.GitHubButton.styles,
     ..._image.Image.styles,
     ..._zoomable_image.ZoomableImage.styles,
+    ..._admonition.Admonition.styles,
+    ..._deprecation.Deprecation.styles,
   ],
 );
 

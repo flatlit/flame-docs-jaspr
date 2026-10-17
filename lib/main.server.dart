@@ -19,6 +19,8 @@ import 'package:jaspr_content/components/image.dart';
 import 'package:jaspr_content/components/sidebar.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 import 'package:jaspr_content/theme.dart';
+import 'package:jaspr_poc/components/admonition.dart';
+import 'package:jaspr_poc/components/deprecation.dart';
 import 'package:jaspr_router/jaspr_router.dart';
 
 // This file is generated automatically by Jaspr, do not remove or edit.
@@ -70,25 +72,25 @@ void main() {
         TableOfContentsExtension(),
       ],
       components: [
-        // The <Info> block and other callouts.
-        Callout(),
+        Deprecation(),
+        Admonition(),
         // Adds syntax highlighting to code blocks.
         CodeBlock(
           defaultLanguage: 'dart',
           grammars: {
             // These are directives used by Sphinx
-            '{include}': emptyGrammar,
-            '{toctree}': emptyGrammar,
-            '{note}': emptyGrammar,
-            '{warning}': emptyGrammar,
-            '{error}': emptyGrammar,
-            '{seealso}': emptyGrammar,
-            '{deprecated}': emptyGrammar,
+            '{include}': emptyGrammar, // TODO there are rarely used, they should be inlined
+            '{toctree}': emptyGrammar, // TODO we need a new way to create the sidebar
+            // These are now covered by Deprecation and Admonition components
+            // '{note}': emptyGrammar,
+            // '{warning}': emptyGrammar,
+            // '{error}': emptyGrammar,
+            // '{seealso}': emptyGrammar,
+            // '{deprecated}': emptyGrammar,
             '{mermaid}': emptyGrammar,
             '{flutter-app}': emptyGrammar,
-            '{dartdoc}': emptyGrammar,
-
-            // Languages (to be rationalised)
+            '{dartdoc}': emptyGrammar, // TODO suggest these just link to the API doc
+            // Languages (to be rationalised and additional )
             'xml': emptyGrammar,
             'bash': emptyGrammar,
             'sh': emptyGrammar,
