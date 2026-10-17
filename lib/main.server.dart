@@ -5,6 +5,9 @@
 library;
 
 // Server-specific Jaspr import.
+
+import 'dart:convert';
+
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/server.dart';
 
@@ -17,9 +20,17 @@ import 'package:jaspr_content/components/sidebar.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 import 'package:jaspr_content/theme.dart';
 
-
 // This file is generated automatically by Jaspr, do not remove or edit.
 import 'main.server.options.dart';
+
+// An 'no syntax' highligher which we can use as we migration from directives
+final emptyGrammar = jsonEncode(const <String, Object?>{
+  'name': 'directive',
+  'scopeName': 'text.plain',
+  'patterns': <Object?>[],
+});
+
+
 
 void main() {
   // Initializes the server environment with the generated default options.
@@ -48,15 +59,42 @@ void main() {
         // The <Info> block and other callouts.
         Callout(),
         // Adds syntax highlighting to code blocks.
-        CodeBlock(),
+        CodeBlock(
+          defaultLanguage: 'dart',
+          grammars: {
+            // These are directives used by Sphinx
+            '{include}': emptyGrammar, 
+            '{toctree}': emptyGrammar,
+            '{note}': emptyGrammar,
+            '{warning}': emptyGrammar,
+            '{error}': emptyGrammar,
+            '{seealso}': emptyGrammar,
+            '{deprecated}': emptyGrammar,
+            '{mermaid}': emptyGrammar,
+            '{flutter-app}': emptyGrammar,
+            '{dartdoc}': emptyGrammar,
+            
+            // Languages (to be rationalised)
+            'xml': emptyGrammar,
+            'bash': emptyGrammar,
+            'sh': emptyGrammar,
+            'shell': emptyGrammar,
+            'console': emptyGrammar,
+            'markdown': emptyGrammar,
+            'text': emptyGrammar,
+            'yaml': emptyGrammar,
+            'yarn': emptyGrammar,
+
+          },
+        ),
         // Adds zooming and caption support to images.
         Image(zoom: true),
       ],
       layouts: [
         DocsLayout(
           header: Header(
-            // Logo has FLAME already 
-            title: 'Documentation',  
+            // Logo has FLAME already
+            title: 'Documentation',
             logo: '/images/logo_flame.png',
 
             items: [
