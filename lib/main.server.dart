@@ -19,6 +19,7 @@ import 'package:jaspr_content/components/image.dart';
 import 'package:jaspr_content/components/sidebar.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 import 'package:jaspr_content/theme.dart';
+import 'package:jaspr_router/jaspr_router.dart';
 
 // This file is generated automatically by Jaspr, do not remove or edit.
 import 'main.server.options.dart';
@@ -30,7 +31,20 @@ final emptyGrammar = jsonEncode(const <String, Object?>{
   'patterns': <Object?>[],
 });
 
+// Theme
+final primaryColor = Color("#ff9500");
+final backgroundColor = Color("#383838");
+final textColor = Color("#cccccc");
+final preBgColor = Color("#202020");
+final codeColor = Color("#8b9fb1");
+final linkColor = Color("#ff9500");
 
+final linkStyles = Styles(color: linkColor);
+final headerLinkStyles = Styles(
+  padding: Spacing.fromLTRB(Unit.em(0.5), Unit.zero, Unit.em(0.5), Unit.zero),
+  alignSelf: AlignSelf.center,
+  color: textColor,
+);
 
 void main() {
   // Initializes the server environment with the generated default options.
@@ -63,7 +77,7 @@ void main() {
           defaultLanguage: 'dart',
           grammars: {
             // These are directives used by Sphinx
-            '{include}': emptyGrammar, 
+            '{include}': emptyGrammar,
             '{toctree}': emptyGrammar,
             '{note}': emptyGrammar,
             '{warning}': emptyGrammar,
@@ -73,7 +87,7 @@ void main() {
             '{mermaid}': emptyGrammar,
             '{flutter-app}': emptyGrammar,
             '{dartdoc}': emptyGrammar,
-            
+
             // Languages (to be rationalised)
             'xml': emptyGrammar,
             'bash': emptyGrammar,
@@ -84,7 +98,6 @@ void main() {
             'text': emptyGrammar,
             'yaml': emptyGrammar,
             'yarn': emptyGrammar,
-
           },
         ),
         // Adds zooming and caption support to images.
@@ -98,6 +111,21 @@ void main() {
             logo: '/images/logo_flame.png',
 
             items: [
+              Link(
+                child: Component.text("API"),
+                to: "https://pub.dev/documentation/flame/latest/",
+                styles: headerLinkStyles,
+              ),
+              Link(
+                child: Component.text("Examples"),
+                to: 'https://examples.flame-engine.org/',
+                styles: headerLinkStyles,
+              ),
+              Link(
+                child: Component.text("Discord"),
+                to: 'https://discord.com/invite/pxrBmy4',
+                styles: headerLinkStyles,
+              ),
               // Shows github stats.
               GitHubButton(repo: 'flame-engine/flame'),
             ],
@@ -105,9 +133,11 @@ void main() {
           footer: footer([
             small([
               Component.text("The content on this page is licensed under the"),
-              a(href: "https://creativecommons.org/licenses/by/4.0/", styles: Styles(color: linkColor), [Component.text("CC BY 4.0 License")]),
+              a(href: "https://creativecommons.org/licenses/by/4.0/", styles: linkStyles, [
+                Component.text("CC BY 4.0 License"),
+              ]),
               Component.text("  and code samples under the"),
-              a(href: "https://raw.githubusercontent.com/flame-engine/flame/main/LICENSE", styles: Styles(color: linkColor), [
+              a(href: "https://raw.githubusercontent.com/flame-engine/flame/main/LICENSE", styles: linkStyles, [
                 Component.text("MIT License."),
               ]),
             ]),
@@ -117,13 +147,94 @@ void main() {
               // Adds navigation links to the sidebar.
               SidebarGroup(
                 links: [
-                  SidebarLink(text: "Flame", href: '/README.md'),
+                  SidebarLink(text: "Index", href: '/'),
+                  SidebarLink(text: "README", href: '/README'),
                 ],
               ),
               SidebarGroup(
-                title: 'Content',
+                title: "Basics",
                 links: [
-                  SidebarLink(text: "About", href: '/'),
+                  SidebarLink(text: "Index", href: '/flame/flame'),
+                  SidebarLink(text: "Camera", href: '/flame/camera'),
+                  SidebarLink(text: "Collisions", href: '/flame/collision_detection'),
+                  SidebarLink(text: "Game Widget", href: '/flame/game_widget'),
+                  SidebarLink(text: "Game", href: '/flame/game'),
+                  SidebarLink(text: "Migration", href: '/flame/migration'),
+                  SidebarLink(text: "Overlays", href: '/flame/overlays'),
+                  SidebarLink(text: "Platforms", href: '/flame/platforms'),
+                  SidebarLink(text: "Router", href: '/flame/router'),
+                  SidebarLink(text: "Structure", href: '/flame/structure'),
+                ],
+              ),
+              SidebarGroup(
+                title: "Components",
+                links: [
+                  SidebarLink(text: "Index", href: '/flame/components/components'),
+                  SidebarLink(text: "Parallax", href: '/flame/components/parallax_components'),
+                ],
+              ),
+              SidebarGroup(
+                title: "Effects",
+                links: [
+                  SidebarLink(text: "Index", href: '/flame/effects/effects'),
+                  SidebarLink(text: "Anchor", href: '/flame/effects/anchor_effect'),
+                ],
+              ),
+              SidebarGroup(
+                title: "Inputs",
+                links: [
+                  SidebarLink(text: "Index", href: '/flame/inputs/inputs'),
+                  SidebarLink(text: "Index", href: '/flame/inputs/drag_events'),
+                ],
+              ),
+              SidebarGroup(
+                title: "Layouts",
+                links: [
+                  SidebarLink(text: "Index", href: '/flame/layout/layout'),
+                  SidebarLink(text: "Align", href: '/flame/layout/align_component'),
+                ],
+              ),
+              SidebarGroup(
+                title: "Other",
+                links: [
+                  SidebarLink(text: "Index", href: '/flame/other/other'),
+                  SidebarLink(text: "CLI", href: '/flame/other/cli'),
+                ],
+              ),
+              SidebarGroup(
+                title: "Rendering",
+                links: [
+                  SidebarLink(text: "Index", href: '/flame/rendering/rendering'),
+                  SidebarLink(text: "Images", href: '/flame/rendering/images'),
+                ],
+              ),
+              SidebarGroup(
+                title: 'Tutorials',
+                links: [
+                  SidebarLink(text: "Index", href: '/tutorials/tutorials'),
+                  SidebarLink(text: "Bare Flame Game", href: '/tutorials/bare_flame_game'),
+                ],
+              ),
+              SidebarGroup(
+                title: 'Other modules',
+                links: [
+                  SidebarLink(text: "Index", href: '/other_modules/other_modules'),
+                ],
+              ),
+              SidebarGroup(
+                title: 'Bridge Packages',
+                links: [
+                  SidebarLink(text: "Index", href: '/bridge_packages/bridge_packages'),
+                ],
+              ),
+              SidebarGroup(
+                title: 'Development',
+                links: [
+                  SidebarLink(text: "Index", href: '/development/development'),
+                  SidebarLink(text: "Contributing", href: '/development/contributing'),
+                  SidebarLink(text: "Documentation", href: '/development/documentation'),
+                  SidebarLink(text: "Style Guide", href: '/development/style_guide'),
+                  SidebarLink(text: "Testing Guide", href: '/development/testing_guide'),
                 ],
               ),
             ],
@@ -155,10 +266,3 @@ void main() {
     ),
   );
 }
-
-final primaryColor = Color("#ff9500");
-final backgroundColor = Color("#383838");
-final textColor = Color("#cccccc");
-final preBgColor = Color("#202020");
-final codeColor = Color("#8b9fb1");
-final linkColor = Color("#ff9500");
