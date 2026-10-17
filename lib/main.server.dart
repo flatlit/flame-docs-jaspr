@@ -5,6 +5,7 @@
 library;
 
 // Server-specific Jaspr import.
+import 'package:jaspr/dom.dart';
 import 'package:jaspr/server.dart';
 
 import 'package:jaspr_content/components/callout.dart';
@@ -13,11 +14,9 @@ import 'package:jaspr_content/components/github_button.dart';
 import 'package:jaspr_content/components/header.dart';
 import 'package:jaspr_content/components/image.dart';
 import 'package:jaspr_content/components/sidebar.dart';
-import 'package:jaspr_content/components/theme_toggle.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 import 'package:jaspr_content/theme.dart';
 
-import 'components/clicker.dart';
 
 // This file is generated automatically by Jaspr, do not remove or edit.
 import 'main.server.options.dart';
@@ -50,40 +49,43 @@ void main() {
         Callout(),
         // Adds syntax highlighting to code blocks.
         CodeBlock(),
-        // Adds a custom Jaspr component to be used as <Clicker/> in markdown.
-        CustomComponent(
-          pattern: 'Clicker',
-          builder: (_, _, _) => Clicker(),
-        ),
         // Adds zooming and caption support to images.
         Image(zoom: true),
       ],
       layouts: [
-        // Out-of-the-box layout for documentation sites.
         DocsLayout(
           header: Header(
-            title: 'My Docs',
-            logo: '/images/logo.svg',
+            // Logo has FLAME already 
+            title: 'Documentation',  
+            logo: '/images/logo_flame.png',
+
             items: [
-              // Enables switching between light and dark mode.
-              ThemeToggle(),
               // Shows github stats.
-              GitHubButton(repo: 'schultek/jaspr'),
+              GitHubButton(repo: 'flame-engine/flame'),
             ],
           ),
+          footer: footer([
+            small([
+              Component.text("The content on this page is licensed under the"),
+              a(href: "https://creativecommons.org/licenses/by/4.0/", styles: Styles(color: linkColor), [Component.text("CC BY 4.0 License")]),
+              Component.text("  and code samples under the"),
+              a(href: "https://raw.githubusercontent.com/flame-engine/flame/main/LICENSE", styles: Styles(color: linkColor), [
+                Component.text("MIT License."),
+              ]),
+            ]),
+          ]),
           sidebar: Sidebar(
             groups: [
               // Adds navigation links to the sidebar.
               SidebarGroup(
-
                 links: [
-                  SidebarLink(text: "Overview", href: '/'),
+                  SidebarLink(text: "Flame", href: '/README.md'),
                 ],
               ),
               SidebarGroup(
                 title: 'Content',
                 links: [
-                  SidebarLink(text: "About", href: '/about'),
+                  SidebarLink(text: "About", href: '/'),
                 ],
               ),
             ],
@@ -91,13 +93,34 @@ void main() {
         ),
       ],
       theme: ContentTheme(
-        // Customizes the default theme colors.
-        primary: ThemeColor(ThemeColors.blue.$500, dark: ThemeColors.blue.$300),
-        background: ThemeColor(ThemeColors.slate.$50, dark: ThemeColors.zinc.$950),
+        // Match basic content of flames.css
+        primary: ThemeColor(primaryColor),
+        background: ThemeColor(backgroundColor),
+        text: ThemeColor(Color("#cccccc")),
+        codeFont: FontFamily.list([FontFamily("SF Mono"), FontFamily("Menlo"), FontFamily("monospace")]),
+        font: FontFamily.list([
+          FontFamily("Ubuntu"),
+          FontFamily("Roboto"),
+          FontFamily("Helvetica Neue"),
+          FontFamily("Arial"),
+          FontFamily("sans-serif"),
+        ]),
+        typography: ContentTypography.base.apply(styles: Styles(), rules: []),
         colors: [
-          ContentColors.quoteBorders.apply(ThemeColors.blue.$400),
+          ContentColors.headings.apply(primaryColor),
+          ContentColors.code.apply(codeColor),
+          ContentColors.preBg.apply(preBgColor),
+          ContentColors.links.apply(linkColor),
+          ContentColors.bold.apply(textColor),
         ],
       ),
     ),
   );
 }
+
+final primaryColor = Color("#ff9500");
+final backgroundColor = Color("#383838");
+final textColor = Color("#cccccc");
+final preBgColor = Color("#202020");
+final codeColor = Color("#8b9fb1");
+final linkColor = Color("#ff9500");
