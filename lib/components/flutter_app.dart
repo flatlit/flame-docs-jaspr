@@ -1,7 +1,7 @@
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr/server.dart';
 import 'package:jaspr_content/jaspr_content.dart';
-import 'package:jaspr_poc/examples/flame_example.dart';
+import 'package:flame_docs_jaspr/examples/flame_example.dart';
 
 /// A flutter-app component
 /// This is custom to the Flame documentation syntax.

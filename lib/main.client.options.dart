@@ -6,6 +6,8 @@
 
 import 'package:jaspr/client.dart';
 import 'package:flutter_web_plugins/flutter_web_plugins.dart';
+import 'package:flame_docs_jaspr/examples/flame_example.dart'
+    deferred as _flame_example;
 import 'package:jaspr_content/components/_internal/code_block_copy_button.dart'
     deferred as _code_block_copy_button;
 import 'package:jaspr_content/components/_internal/zoomable_image.dart'
@@ -14,8 +16,6 @@ import 'package:jaspr_content/components/github_button.dart'
     deferred as _github_button;
 import 'package:jaspr_content/components/sidebar_toggle_button.dart'
     deferred as _sidebar_toggle_button;
-import 'package:jaspr_poc/examples/flame_example.dart'
-    deferred as _flame_example;
 import 'package:rive_native/rive_native_plugin_web.dart'
     as _rive_native_plugin_web;
 
@@ -42,6 +42,10 @@ ClientOptions get defaultClientOptions => ClientOptions(
     registrar.registerMessageHandler();
   },
   clients: {
+    'flame_example': ClientLoader(
+      (p) => _flame_example.FlameExample(page: p['page'] as String),
+      loader: _flame_example.loadLibrary,
+    ),
     'jaspr_content:code_block_copy_button': ClientLoader(
       (p) => _code_block_copy_button.CodeBlockCopyButton(),
       loader: _code_block_copy_button.loadLibrary,
@@ -61,10 +65,6 @@ ClientOptions get defaultClientOptions => ClientOptions(
     'jaspr_content:sidebar_toggle_button': ClientLoader(
       (p) => _sidebar_toggle_button.SidebarToggleButton(),
       loader: _sidebar_toggle_button.loadLibrary,
-    ),
-    'flame_example': ClientLoader(
-      (p) => _flame_example.FlameExample(page: p['page'] as String),
-      loader: _flame_example.loadLibrary,
     ),
   },
 );

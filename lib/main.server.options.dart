@@ -5,6 +5,7 @@
 // Generated with jaspr_builder
 
 import 'package:jaspr/server.dart';
+import 'package:flame_docs_jaspr/examples/flame_example.dart' as _flame_example;
 import 'package:jaspr_content/components/_internal/code_block_copy_button.dart'
     as _code_block_copy_button;
 import 'package:jaspr_content/components/_internal/zoomable_image.dart'
@@ -12,7 +13,6 @@ import 'package:jaspr_content/components/_internal/zoomable_image.dart'
 import 'package:jaspr_content/components/github_button.dart' as _github_button;
 import 'package:jaspr_content/components/sidebar_toggle_button.dart'
     as _sidebar_toggle_button;
-import 'package:jaspr_poc/examples/flame_example.dart' as _flame_example;
 
 /// Default [ServerOptions] for use with your Jaspr project.
 ///
@@ -33,6 +33,10 @@ import 'package:jaspr_poc/examples/flame_example.dart' as _flame_example;
 ServerOptions get defaultServerOptions => ServerOptions(
   clientId: 'main.client.dart.js',
   clients: {
+    _flame_example.FlameExample: ClientTarget<_flame_example.FlameExample>(
+      'flame_example',
+      params: __flame_exampleFlameExample,
+    ),
     _code_block_copy_button.CodeBlockCopyButton:
         ClientTarget<_code_block_copy_button.CodeBlockCopyButton>(
           'jaspr_content:code_block_copy_button',
@@ -49,20 +53,16 @@ ServerOptions get defaultServerOptions => ServerOptions(
         ClientTarget<_sidebar_toggle_button.SidebarToggleButton>(
           'jaspr_content:sidebar_toggle_button',
         ),
-    _flame_example.FlameExample: ClientTarget<_flame_example.FlameExample>(
-      'flame_example',
-      params: __flame_exampleFlameExample,
-    ),
   },
   stylesId: 'main.css',
 );
 
+Map<String, Object?> __flame_exampleFlameExample(
+  _flame_example.FlameExample c,
+) => {'page': c.page};
 Map<String, Object?> __zoomable_imageZoomableImage(
   _zoomable_image.ZoomableImage c,
 ) => {'src': c.src, 'alt': c.alt, 'caption': c.caption};
 Map<String, Object?> __github_buttonGitHubButton(
   _github_button.GitHubButton c,
 ) => {'repo': c.repo};
-Map<String, Object?> __flame_exampleFlameExample(
-  _flame_example.FlameExample c,
-) => {'page': c.page};

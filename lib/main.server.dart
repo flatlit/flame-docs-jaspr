@@ -18,11 +18,11 @@ import 'package:jaspr_content/components/image.dart';
 import 'package:jaspr_content/components/sidebar.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 import 'package:jaspr_content/theme.dart';
-import 'package:jaspr_poc/components/admonition.dart';
-import 'package:jaspr_poc/components/deprecation.dart';
-import 'package:jaspr_poc/components/flutter_app.dart';
-import 'package:jaspr_poc/components/mermaid.dart';
-import 'package:jaspr_poc/examples/flame_example.dart';
+import 'package:flame_docs_jaspr/components/admonition.dart';
+import 'package:flame_docs_jaspr/components/deprecation.dart';
+import 'package:flame_docs_jaspr/components/flutter_app.dart';
+import 'package:flame_docs_jaspr/components/mermaid.dart';
+import 'package:flame_docs_jaspr/examples/flame_example.dart';
 import 'package:jaspr_router/jaspr_router.dart';
 
 // This file is generated automatically by Jaspr, do not remove or edit.
