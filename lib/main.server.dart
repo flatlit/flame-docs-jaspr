@@ -20,6 +20,7 @@ import 'package:jaspr_content/jaspr_content.dart';
 import 'package:jaspr_content/theme.dart';
 import 'package:jaspr_poc/components/admonition.dart';
 import 'package:jaspr_poc/components/deprecation.dart';
+import 'package:jaspr_poc/components/flutter_app.dart';
 import 'package:jaspr_poc/components/mermaid.dart';
 import 'package:jaspr_poc/examples/flame_example.dart';
 import 'package:jaspr_router/jaspr_router.dart';
@@ -79,6 +80,9 @@ void main() {
             return FlameExample(page: attributes["page"] ?? "missing");
           },
         ),
+
+        // Direcctives
+        FlutterApp(),
         Mermaid(),
         Deprecation(),
         Admonition(),
