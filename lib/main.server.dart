@@ -102,8 +102,10 @@ void main() {
             // '{deprecated}': emptyGrammar,
             // Handled by Mermaid component
             // '{mermaid}': emptyGrammar,
-            '{flutter-app}': emptyGrammar,
-            '{dartdoc}': emptyGrammar, // TODO suggest these just link to the API doc
+            // Handled by FlutterApp component
+            // '{flutter-app}': emptyGrammar,
+            // TODO suggest these just link to the API doc
+            '{dartdoc}': emptyGrammar,
             // Languages (to be rationalised and additional )
             'xml': emptyGrammar,
             'bash': emptyGrammar,

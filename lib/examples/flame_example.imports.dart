@@ -6,10 +6,4 @@
 
 export '../generated/imports/_web.dart'
     if (dart.library.io) '../generated/imports/_stubs.dart'
-    show
-        AnchorByEffectGame,
-        AnchorByEffectGameOrStubbed,
-        AnchorToEffectGame,
-        AnchorToEffectGameOrStubbed,
-        GameWidget,
-        GameWidgetOrStubbed;
+    show routes, GameWidget, GameWidgetOrStubbed;

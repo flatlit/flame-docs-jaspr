@@ -36,9 +36,11 @@ import './size_to_effect.dart';
 import './tap_events.dart';
 import './time_scale.dart';
 import './value_route.dart';
+
 import 'package:flame/game.dart';
-import 'package:flutter/widgets.dart';
-import 'package:web/web.dart' as web;
+
+// import 'package:flutter/widgets.dart';
+// import 'package:web/web.dart' as web;
 
 final routes = <String, Game Function()>{
   'anchor': AnchorGame.new,
@@ -81,38 +83,38 @@ final routes = <String, Game Function()>{
   'value_route': ValueRouteExample.new,
 };
 
-void main() {
-  var page = web.window.location.search;
-  if (page.startsWith('?')) {
-    page = page.substring(1);
-  }
-  final game = routes[page]?.call();
-  if (game != null) {
-    runApp(GameWidget(game: game));
-  } else {
-    runApp(_IndexRoute(page: page));
-  }
-}
+// void main() {
+//   var page = web.window.location.search;
+//   if (page.startsWith('?')) {
+//     page = page.substring(1);
+//   }
+//   final game = routes[page]?.call();
+//   if (game != null) {
+//     runApp(GameWidget(game: game));
+//   } else {
+//     runApp(_IndexRoute(page: page));
+//   }
+// }
 
-class const _IndexRoute({
-  required final String page,
-}) extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Directionality(
-      textDirection: TextDirection.ltr,
-      child: Column(
-        children: [
-          Text('Error: unknown page name "$page"'),
-          const Text('Select an option below:'),
-          ...routes.keys.map((route) {
-            return GestureDetector(
-              onTap: () => web.window.location.replace('/?$route'),
-              child: Text(route),
-            );
-          }),
-        ],
-      ),
-    );
-  }
-}
+// class const _IndexRoute({
+//   required final String page,
+// }) extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Directionality(
+//       textDirection: TextDirection.ltr,
+//       child: Column(
+//         children: [
+//           Text('Error: unknown page name "$page"'),
+//           const Text('Select an option below:'),
+//           ...routes.keys.map((route) {
+//             return GestureDetector(
+//               onTap: () => web.window.location.replace('/?$route'),
+//               child: Text(route),
+//             );
+//           }),
+//         ],
+//       ),
+//     );
+//   }
+// }

@@ -3,8 +3,9 @@ import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_flutter_embed/jaspr_flutter_embed.dart';
 
 @Import.onWeb('package:flame/game.dart', show: [#GameWidget])
-@Import.onWeb('lib/anchor_to_effect.dart', show: [#AnchorToEffectGame])
-@Import.onWeb('lib/anchor_by_effect.dart', show: [#AnchorByEffectGame])
+@Import.onWeb('lib/main.dart', show: [#routes])
+// @Import.onWeb('lib/anchor_to_effect.dart', show: [#AnchorToEffectGame])
+// @Import.onWeb('lib/anchor_by_effect.dart', show: [#AnchorByEffectGame])
 import 'flame_example.imports.dart';
 
 /// Embedded a Flame Example into Markdown
@@ -25,15 +26,8 @@ class FlameExample extends StatelessComponent {
         ],
       ),
       FlutterEmbedView(
-        widget: !kIsWeb
-            ? null
-            : GameWidget(
-                game: switch (page) {
-                  "anchor_to_effect" => AnchorToEffectGame(),
-                  "anchor_by_effect" => AnchorByEffectGame(),
-                  _ => throw ArgumentError.value(page, 'page', "unknown example"),
-                },
-              ),
+        // TODO we should check the routes page early
+        widget: !kIsWeb ? null : GameWidget(game: routes[page]!.call()),
         constraints: ViewConstraints(
           minWidth: 160,
           minHeight: 120,

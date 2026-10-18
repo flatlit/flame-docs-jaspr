@@ -6,9 +6,6 @@
 
 // ignore_for_file: directives_ordering, non_constant_identifier_names
 
-dynamic AnchorByEffectGame;
-typedef AnchorByEffectGameOrStubbed = dynamic;
-dynamic AnchorToEffectGame;
-typedef AnchorToEffectGameOrStubbed = dynamic;
+dynamic routes;
 dynamic GameWidget;
 typedef GameWidgetOrStubbed = dynamic;
