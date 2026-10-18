@@ -56,12 +56,29 @@ void main() {
     options: defaultServerOptions,
   );
 
+  // Our content director has asset in
+  final assetManager = AssetManager(
+    // The root directory where your assets are located. Usually, this is the same as your content directory.
+    directory: 'content',
+    // Optional: Configure which properties in your frontmatter contain asset paths.
+    // dataProperties: {'image', 'meta.thumbnail'},
+  );
+  ServerApp.addMiddleware(assetManager.middleware);
+
   // Starts the app.
   //
   // [ContentApp] spins up the content rendering pipeline from jaspr_content to render
   // your markdown files in the content/ directory to a beautiful documentation site.
   runApp(
-    ContentApp(
+    ContentApp.custom(
+      loaders: [
+        FilesystemLoader('content', filterExtensions: {".md"}),
+      ],
+      configResolver: PageConfig.all(
+        dataLoaders: [
+          FilesystemDataLoader("content/_data"),
+          assetManager.dataLoader,
+        ],
       // Enables mustache templating inside the markdown files.
       templateEngine: MustacheTemplateEngine(),
       parsers: [
@@ -72,6 +89,7 @@ void main() {
         HeadingAnchorsExtension(),
         // Generates a table of contents for each page.
         TableOfContentsExtension(),
+          assetManager.pageExtension,
       ],
       components: [
         CustomComponent(
@@ -106,6 +124,8 @@ void main() {
             // '{flutter-app}': emptyGrammar,
             // TODO suggest these just link to the API doc
             '{dartdoc}': emptyGrammar,
+              // TODO sphinx thing?
+              '{list-table}': emptyGrammar,
             // Languages (to be rationalised and additional )
             'xml': emptyGrammar,
             'bash': emptyGrammar,
@@ -116,6 +136,7 @@ void main() {
             'text': emptyGrammar,
             'yaml': emptyGrammar,
             'yarn': emptyGrammar,
+              'glsl': emptyGrammar,
           },
         ),
         // Adds zooming and caption support to images.
@@ -281,6 +302,7 @@ void main() {
           ContentColors.links.apply(linkColor),
           ContentColors.bold.apply(textColor),
         ],
+        ),
       ),
     ),
   );
