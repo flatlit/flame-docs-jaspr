@@ -21,6 +21,7 @@ import 'package:jaspr_content/theme.dart';
 import 'package:jaspr_poc/components/admonition.dart';
 import 'package:jaspr_poc/components/deprecation.dart';
 import 'package:jaspr_poc/components/mermaid.dart';
+import 'package:jaspr_poc/examples/flame_example.dart';
 import 'package:jaspr_router/jaspr_router.dart';
 
 // This file is generated automatically by Jaspr, do not remove or edit.
@@ -72,6 +73,12 @@ void main() {
         TableOfContentsExtension(),
       ],
       components: [
+        CustomComponent(
+          pattern: 'FlameExample',
+          builder: (name, attributes, child) {
+            return FlameExample(page: attributes["page"] ?? "missing");
+          },
+        ),
         Mermaid(),
         Deprecation(),
         Admonition(),
@@ -182,7 +189,7 @@ void main() {
                 title: "Effects",
                 links: [
                   SidebarLink(text: "Index", href: '/flame/effects/effects'),
-                  SidebarLink(text: "Anchor", href: '/flame/effects/anchor_effect'),
+                  SidebarLink(text: "Anchor", href: '/flame/effects/anchor_effects'),
                 ],
               ),
               SidebarGroup(

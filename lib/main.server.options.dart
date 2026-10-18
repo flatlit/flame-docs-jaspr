@@ -9,13 +9,10 @@ import 'package:jaspr_content/components/_internal/code_block_copy_button.dart'
     as _code_block_copy_button;
 import 'package:jaspr_content/components/_internal/zoomable_image.dart'
     as _zoomable_image;
-import 'package:jaspr_content/components/code_block.dart' as _code_block;
 import 'package:jaspr_content/components/github_button.dart' as _github_button;
-import 'package:jaspr_content/components/image.dart' as _image;
 import 'package:jaspr_content/components/sidebar_toggle_button.dart'
     as _sidebar_toggle_button;
-import 'package:jaspr_poc/components/admonition.dart' as _admonition;
-import 'package:jaspr_poc/components/deprecation.dart' as _deprecation;
+import 'package:jaspr_poc/examples/flame_example.dart' as _flame_example;
 
 /// Default [ServerOptions] for use with your Jaspr project.
 ///
@@ -52,15 +49,12 @@ ServerOptions get defaultServerOptions => ServerOptions(
         ClientTarget<_sidebar_toggle_button.SidebarToggleButton>(
           'jaspr_content:sidebar_toggle_button',
         ),
+    _flame_example.FlameExample: ClientTarget<_flame_example.FlameExample>(
+      'flame_example',
+      params: __flame_exampleFlameExample,
+    ),
   },
-  styles: () => [
-    ..._code_block.CodeBlock.styles,
-    ..._github_button.GitHubButton.styles,
-    ..._image.Image.styles,
-    ..._zoomable_image.ZoomableImage.styles,
-    ..._admonition.Admonition.styles,
-    ..._deprecation.Deprecation.styles,
-  ],
+  stylesId: 'main.css',
 );
 
 Map<String, Object?> __zoomable_imageZoomableImage(
@@ -69,3 +63,6 @@ Map<String, Object?> __zoomable_imageZoomableImage(
 Map<String, Object?> __github_buttonGitHubButton(
   _github_button.GitHubButton c,
 ) => {'repo': c.repo};
+Map<String, Object?> __flame_exampleFlameExample(
+  _flame_example.FlameExample c,
+) => {'page': c.page};

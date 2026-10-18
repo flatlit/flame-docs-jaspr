@@ -49,6 +49,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.1.5"
+  boolean_selector:
+    dependency: transitive
+    description:
+      name: boolean_selector
+      sha256: "8aab1771e1243a5063b8b0ff68042d67334e3feab9e95b9490f9a6ebf73b42ea"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.1.2"
   build:
     dependency: transitive
     description:
@@ -161,6 +169,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.2"
+  cupertino_ui:
+    dependency: transitive
+    description:
+      name: cupertino_ui
+      sha256: "8e14acc2817ff469b925b0e275ab85ecc6c769621360dd0af1331c47f916e247"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.1.3"
   d4_array:
     dependency: transitive
     description:
@@ -193,6 +209,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.1.8"
+  fake_async:
+    dependency: transitive
+    description:
+      name: fake_async
+      sha256: "5368f224a74523e8d2e7399ea1638b37aecfca824a3cc4dfdf77bf1fa905ac44"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.3.3"
   fbh_front_matter:
     dependency: transitive
     description:
@@ -225,6 +249,58 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.1.1"
+  flame:
+    dependency: "direct main"
+    description:
+      name: flame
+      sha256: "56f16a56ce921ed80b363e3a1861f6cce43d015fa8958fc8066b1187b1ef571e"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.0-dev.1"
+  flame_rive:
+    dependency: "direct main"
+    description:
+      name: flame_rive
+      sha256: "2a5f335c1d9cf26b5a7dd9b4704b6d6308800d92677ae7a02ee137d160a1aa63"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.0-dev.1"
+  flutter:
+    dependency: "direct main"
+    description: flutter
+    source: sdk
+    version: "0.0.0"
+  flutter_lints:
+    dependency: "direct dev"
+    description:
+      name: flutter_lints
+      sha256: "5398f14efa795ffb7a33e9b6a08798b26a180edac4ad7db3f231e40f82ce11e1"
+      url: "https://pub.dev"
+    source: hosted
+    version: "5.0.0"
+  flutter_localizations:
+    dependency: transitive
+    description: flutter
+    source: sdk
+    version: "0.0.0"
+  flutter_shaders:
+    dependency: "direct main"
+    description:
+      name: flutter_shaders
+      sha256: "16cd456daf2fd6ed7ac0c5168716c5e2fe18f91d82631b775f1af9100fb3f586"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.1.5"
+  flutter_test:
+    dependency: "direct dev"
+    description: flutter
+    source: sdk
+    version: "0.0.0"
+  flutter_web_plugins:
+    dependency: transitive
+    description: flutter
+    source: sdk
+    version: "0.0.0"
   gato:
     dependency: transitive
     description:
@@ -337,6 +413,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.5.4"
+  jaspr_flutter_embed:
+    dependency: "direct main"
+    description:
+      name: jaspr_flutter_embed
+      sha256: "5e89158623c8cc94050889daeab34a3f9384f71470f624f95d387306b1eaca93"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.4.11"
   jaspr_lucide:
     dependency: "direct main"
     description:
@@ -361,6 +445,30 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.12.0"
+  leak_tracker:
+    dependency: transitive
+    description:
+      name: leak_tracker
+      sha256: "33e2e26bdd85a0112ec15400c8cbffea70d0f9c3407491f672a2fad47915e2de"
+      url: "https://pub.dev"
+    source: hosted
+    version: "11.0.2"
+  leak_tracker_flutter_testing:
+    dependency: transitive
+    description:
+      name: leak_tracker_flutter_testing
+      sha256: "1dbc140bb5a23c75ea9c4811222756104fbcd1a27173f0c34ca01e16bea473c1"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.10"
+  leak_tracker_testing:
+    dependency: transitive
+    description:
+      name: leak_tracker_testing
+      sha256: "8d5a2d49f4a66b49744b23b018848400d23e54caf9463f4eb20df3eb8acb2eb1"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.2"
   lints:
     dependency: "direct dev"
     description:
@@ -393,14 +501,38 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "7.3.1"
+  matcher:
+    dependency: transitive
+    description:
+      name: matcher
+      sha256: "31bd099b47c10cd1aeb55146a2d46ce0277630ecef3f7dae54ad7873f36696cd"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.12.20"
+  material_color_utilities:
+    dependency: transitive
+    description:
+      name: material_color_utilities
+      sha256: "9c337007e82b1889149c82ed242ed1cb24a66044e30979c44912381e9be4c48b"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.13.0"
+  material_ui:
+    dependency: "direct main"
+    description:
+      name: material_ui
+      sha256: "27ea1af251a79728ee63068417f2ab469d294931a9bb8366ba8b85b0ef839060"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.7.0"
   meta:
     dependency: transitive
     description:
       name: meta
-      sha256: "307249ce4ff29d58a18e97f6345f539382eb9c9c29ecda628900f31de0443dd9"
+      sha256: c82594181e3312f3d0695fc95aaaf7758d75b8d4ae2bbecf223b9fd5109a059d
       url: "https://pub.dev"
     source: hosted
-    version: "1.19.0"
+    version: "1.18.3"
   mime:
     dependency: transitive
     description:
@@ -437,10 +569,18 @@ packages:
     dependency: transitive
     description:
       name: petitparser
-      sha256: "2f1564aadb14215e478563b5406cb80729d022158c01dc50c96013c2f7eb4790"
+      sha256: "91bd59303e9f769f108f8df05e371341b15d59e995e6806aefab827b58336675"
       url: "https://pub.dev"
     source: hosted
-    version: "7.1.0"
+    version: "7.0.2"
+  plugin_platform_interface:
+    dependency: transitive
+    description:
+      name: plugin_platform_interface
+      sha256: "4820fbfdb9478b1ebae27888254d445073732dae3d6ea81f0b7e06d5dedc3f02"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.1.8"
   pool:
     dependency: transitive
     description:
@@ -481,6 +621,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.6.0"
+  rive:
+    dependency: transitive
+    description:
+      name: rive
+      sha256: "0319f216b753f5d8f3f624413cd5b5a18f6ed8f0a677f80d97b53ecd3d2080c3"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.14.11"
+  rive_native:
+    dependency: transitive
+    description:
+      name: rive_native
+      sha256: f1ae8a9ec4dab6b803fed006745e55c7de6cd568bd30750d4a6770479b9f8294
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.1.11"
   scratch_space:
     dependency: transitive
     description:
@@ -529,6 +685,11 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.0.0"
+  sky_engine:
+    dependency: transitive
+    description: flutter
+    source: sdk
+    version: "0.0.0"
   source_gen:
     dependency: transitive
     description:
@@ -601,6 +762,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.2.2"
+  test_api:
+    dependency: transitive
+    description:
+      name: test_api
+      sha256: "2a122cbe059f8b610d3a5415f42e255b6c17b1f21eee1d960f31080237fb4f11"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.7.12"
   timezone:
     dependency: transitive
     description:
@@ -633,6 +802,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.6.0"
+  vector_math:
+    dependency: transitive
+    description:
+      name: vector_math
+      sha256: "1d774bbdf6b72a0b12122fc1560c9c2d2a67db5a4a4cc2bd8a5c990ab20e3188"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.4.0"
   vm_service:
     dependency: transitive
     description:
@@ -650,7 +827,7 @@ packages:
     source: hosted
     version: "1.2.1"
   web:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: web
       sha256: "868d88a33d8a87b18ffc05f9f030ba328ffefba92d6c127917a2ba740f9cfe4a"
@@ -691,3 +868,4 @@ packages:
     version: "3.1.4"
 sdks:
   dart: ">=3.13.0 <3.14.0-z"
+  flutter: ">=3.47.0"
