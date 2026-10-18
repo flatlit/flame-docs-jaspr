@@ -22,7 +22,7 @@ class FlameExample extends StatelessComponent {
     return .fragment([
       Document.head(
         children: [
-          script(src: '/flutter_bootstrap.js', async: true, id: 'flutter-bootstrap'),
+          script(src: 'flutter_bootstrap.js', async: true, id: 'flutter-bootstrap'),
         ],
       ),
       FlutterEmbedView(

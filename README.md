@@ -55,8 +55,6 @@ Numerous `jaspr clean` and `jaspr serve` cycles has been required to get the flu
 
 When Flutter embeds it often bricks my brower's web inspector pain. _this is why the asset paths haven't been fixed_. 
 
-There's quite a few areas of jaspr which are unclear under `jaspr_content`. For example github base path, adding common script, etc. Things like the Flame sidebar, versioning, etc  
-
 ### Suggestions
 
 - Drop `{:include:}` and the content can be inlined in the Markdown. This is more complex that it seems because reading a file behidn the scenes, (outside jaspr) means you need your own content pipeline for that (markdown parsing etc).  

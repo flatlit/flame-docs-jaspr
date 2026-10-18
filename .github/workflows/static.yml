@@ -40,7 +40,7 @@ jobs:
       - name: 'Build Jaspr'
         run: |
           dart pub global activate jaspr_cli
-          jaspr build --verbose
+          jaspr build --dart-define=BASE_PATH=flame-docs-jaspr --verbose
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
